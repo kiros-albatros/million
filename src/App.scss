@@ -1,0 +1,160 @@
+* {
+	box-sizing: border-box;
+}
+
+.App {
+	max-height: 100vh;
+	display: flex;
+	background-color: royalblue;
+	color: white;
+	margin: 0;
+	max-width: 100%;
+}
+
+.main {
+	width: 80%;
+	background: url(./assets/2qkodw.jpg), rgb(29, 79, 228);
+	background-repeat: repeat;
+	background-blend-mode: overlay;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.pyramid {
+	width: 20%;
+	background-color: rgb(36, 64, 148);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pyramid__list {
+	padding: 25px;
+	outline: 2px solid white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.pyramid__item {
+	min-width: 200px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.pyramid__item.active {
+	background-color: teal;
+}
+
+.top {
+	position: relative;
+	height: 50%;
+}
+
+.timer {
+	position: absolute;
+	left: 40px;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 5px solid white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.trivia {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.question {
+	width: 70%;
+	padding: 20px;
+	background-color: rgb(15, 15, 126);
+	border: 2px solid white;
+	text-align: center;
+	border-radius: 11px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.answers {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 80%;
+
+	.answer {
+		width: 47%;
+		background-color: yellowgreen;
+		margin-bottom: 20px;
+		background-color: rgb(15, 15, 126);
+		text-align: center;
+		padding: 15px;
+		border-radius: 11px;
+		border: 1px solid white;
+
+		&:hover,
+		&:active {
+			background-color: mediumblue;
+			cursor: pointer;
+		}
+	}
+
+	.answer--correct {
+		background-color: rgb(10, 161, 10);
+		animation: correct 2s ease forwards;
+	}
+
+	.answer--wrong {
+		background-color: rgb(224, 17, 17);
+		animation: wrong 2s ease forwards;
+	}
+
+	@keyframes correct {
+		0% {
+			background-color: mediumblue;
+		}
+
+		50% {
+			background-color: rgb(15, 15, 126);
+		}
+
+		90% {
+			background-color: rgb(10, 161, 10);
+		}
+	}
+
+	@keyframes wrong {
+		0% {
+			background-color: mediumblue;
+		}
+
+		50% {
+			background-color: rgb(15, 15, 126);
+		}
+
+		90% {
+			background-color: rgb(224, 17, 17);
+		}
+	}
+}
+
+.endText {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
